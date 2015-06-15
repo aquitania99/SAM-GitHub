@@ -15,11 +15,11 @@ class ContactsController {
         return new View('contacts',['title' => 'Our Location!']);
     }
     
-    public function send()
+    public function sendAction()
     {
         $this->myinputs = filter_input_array(INPUT_POST);
         var_dump($this->myinputs);
-        if (!empty(INPUT_POST))
+        if (!empty($this->myinputs))
         {
             $this->data = $this->myinputs;
             if (!$this->data['inputNewsletter'])
@@ -44,12 +44,18 @@ class ContactsController {
                             'replace_interests' => false,
                             'send_welcome'      => false,
                         ));
+            //addUser($this->data);
             return new View('thanks',['title' => 'Thank you for your feedback '. $this->data['inputName'].'!', 'email' => $this->data['inputEmail'], 'data' => $result]);
         }
         else 
         {
             return new View('contacts', ['title' => 'Sorry! Can\'t submit an empty Form.']);
         }
+    }
+    
+    public function addUser($data)
+    {
+        var_dump($data);
     }
     
 }

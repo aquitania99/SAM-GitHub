@@ -4,7 +4,7 @@
         <p class="text-muted">We look forward to hearing from you!</p>
         <p>info@my.company</p>
         <div class="col-md-4">
-            <form action="" method="post">
+            <form action="contacts/send" method="post">
                 <div class="form-group">
                   <label for="inputName">Name</label>
                   <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Enter Name">
