@@ -58,27 +58,14 @@ elseif ($post['adminAction'] == 'getUser') // List Users
     {
         $data['success'] = true;
         $data['message'] = 'Users Grabbed - Success!';
-        foreach ($result as $item => $user){
-//            echo $item. " --//-- " .$user."\n";
-            foreach ($user as $client => $value) {
-//                echo "$client. <code>".$value."</code>\n\n";
+        foreach ($result as $item => $user)
+        {
+            foreach ($user as $client => $value) 
+            {
                 $data["$client"] = $value; 
             }
         }
     }
-//    if ($data != '')
-//    {
-//        user_id":"1","
-//        . ""usr_firstName":"Sergio","
-//                usr_lastName":"Medina","
-//                usr_email":"aquitania99@gmail.com","
-//                usr_comments":"Fish and Ships","
-//                usr_newsLetter":"on","
-//                usr_date_added":"2015-06-16 17:15:24"
-//        $data['success'] = true;
-//        $data['message'] = 'Users Grabbed - Success!';
-//        $data['location'] = $location;
-//    }
     else
     {
         $data['success'] = false;
