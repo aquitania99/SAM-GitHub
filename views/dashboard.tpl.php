@@ -1,6 +1,6 @@
 <div class="container">
     <h2 class="form-signin-heading"><?= $title ?></h2>
-    <table class="table table-condensed table-bordered col-xs-12 .col-md-8">
+    <table class="table table-condensed table-bordered col-xs-12">
         <tr>
             <td>
                 <a href="" onclick="getUsers(action = 'getUser')"><button class="btn btn-default">
@@ -25,15 +25,14 @@
         </tr>
     </table>
     <div class="row">
-        <table class="table table-stripped table-condensed hidden" id="results">
-            <tr>
+        <table class="table table-stripped table-condensed col-xs-12 hidden" id="results">
+            <thead>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Comments</th>
                 <th>Newsletter</th>
                 <th>Date Addded</th>
-            </tr>
-            
+            </thead>
         </table>
     </div>
 </div>
