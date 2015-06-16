@@ -50,6 +50,9 @@
                   </ul>
                 </li>
               </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="admin">admin-login</a></li>
+                </ul>  
             </div>
           </div>
         </nav>

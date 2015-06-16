@@ -4,18 +4,18 @@
         <p class="text-muted">We look forward to hearing from you!</p>
         <p>info@my.company</p>
         <div class="col-md-4">
-            <form action="contacts/send" method="post">
+            <form action="contacts" id="contactForm" method="post">
                 <div class="form-group">
                   <label for="inputName">Name</label>
-                  <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Enter Name">
+                  <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Enter Name" required="" autofocus="">
                 </div>
                 <div class="form-group">
                   <label for="inputLastName">Last Name</label>
-                  <input type="text" class="form-control" id="inputLastName" name="inputLastName" placeholder="Enter Last Name">
+                  <input type="text" class="form-control" id="inputLastName" name="inputLastName" placeholder="Enter Last Name" required="">
                 </div>
                 <div class="form-group">
                   <label for="inputEmail">Email Address</label>
-                  <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email">
+                  <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required="">
                 </div>
                 <div class="form-group">
                   <label for="inputComments">Comments</label>
@@ -27,6 +27,7 @@
                     <input type="checkbox" id="inputNewsletter" name="inputNewsletter"> Add me to your Newsletter
                   </label>
                 </div>
+                <input type="hidden" name="submit" value="contact">
                 <button type="submit" class="btn btn-default" name="submitForm">Submit</button>
           </form>
         </div>
@@ -35,3 +36,4 @@
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization,places"></script>
 <script src="js/map.js"></script>
+<script type="text/javascript" src="js/processData.js"></script>

@@ -1,8 +1,8 @@
 <?php
 
 /*
- * El frontend controller se encarga de
- * configurar nuestra aplicacion
+ * Frontend controller to
+ * configure the application
  */
 require 'config.php';
 require 'helpers.php';
@@ -14,7 +14,7 @@ require 'library/Response.php';
 require 'library/View.php';
 
 
-//Llamar al controlador indicado
+//Call the right Controller
 
 if (empty($_GET['url']))
 {

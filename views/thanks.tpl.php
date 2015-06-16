@@ -1,4 +1,6 @@
-<h1><?= $title ?></h1>
+<h1>Thank you for your feedback!</h1>
 <p class="lead">
-    We will reply to your email: <code><?= $email ?></code> very soon.
+    <div class="alert alert-success" role="alert">
+        We'll get back to you shortly.
+    </div>
 </p>
