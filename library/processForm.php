@@ -1,12 +1,14 @@
 <?php
 //
+require_once 'DB_Conn.php';
+//
 $post = filter_input_array(INPUT_POST);
 //
 $errors = array();    // array to hold validation errors
 $data   = array();    // array to pass back data
 if ($post['submit'] == 'login') //Admin Login
 {
-    require 'DB_Conn.php';
+//    require 'DB_Conn.php';
     $user = $post['inputEmail'];
     $passwd = $post['inputPassword'];
     //
@@ -48,10 +50,9 @@ elseif ($post['submit'] == 'contact') // Contact Form
         $data['location'] = 'NA';
     }
 }
-elseif ($post['adminAction'] == 'getUser') // List Users
+
+elseif ($post['submit'] == 'getUser') // List Users
 {
-    require 'DB_Conn.php';
-    //
     $usrs = listUser();
     $result = json_decode($usrs,true);
     if ($result != '')
@@ -62,7 +63,7 @@ elseif ($post['adminAction'] == 'getUser') // List Users
         {
             foreach ($user as $client => $value) 
             {
-                $data["$client"] = $value; 
+                $data['results'] = $value; 
             }
         }
     }
@@ -71,6 +72,12 @@ elseif ($post['adminAction'] == 'getUser') // List Users
         $data['success'] = false;
         $data['location'] = 'NA';
     }
+}
+elseif($post['submit'] == 'update') //Update User
+{
+    $userId = $post['userId'];
+    $user = updateUser($userId);
+    var_dump($userId);
 }
 // return all our data to an AJAX call
 echo json_encode($data);
